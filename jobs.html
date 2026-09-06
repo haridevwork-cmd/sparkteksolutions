@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description"
+        content="Search open contract, contract-to-hire, and direct hire technology roles placed by Spark Tek Solutions.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Find a Job - Spark Tek Solutions">
+    <meta property="og:description" content="Search open technology roles placed by Spark Tek Solutions">
+
+    <title>Find a Job - Spark Tek Solutions</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/Logo_Spark_Tek_Solutions.jpeg" alt="Spark Tek Solutions">
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="index.html#staffing" class="nav-link">Staffing</a></li>
+                <li><a href="jobs.html" class="nav-link active">Find Jobs</a></li>
+                <li><a href="careers.html" class="nav-link">Careers</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Find Your Next Opportunity</h1>
+            <p class="hero-subtitle">Search open contract, contract-to-hire, and direct hire roles we're actively staffing for our clients</p>
+        </div>
+    </section>
+
+    <!-- Job Search -->
+    <section class="job-search-section">
+        <div class="container">
+            <div class="job-search-container">
+                <div class="job-search-fields">
+                    <div class="job-search-field">
+                        <i class="fas fa-magnifying-glass"></i>
+                        <input type="text" id="jobKeywordInput" placeholder="Job Title or Keyword...">
+                    </div>
+                    <div class="job-search-field">
+                        <i class="fas fa-location-dot"></i>
+                        <input type="text" id="jobLocationInput" placeholder="City or Remote...">
+                    </div>
+                    <select id="jobCategoryFilter">
+                        <option value="all">All Categories</option>
+                        <option value="Software Development">Software Development</option>
+                        <option value="Data & AI">Data & AI</option>
+                        <option value="Cloud & Infrastructure">Cloud & Infrastructure</option>
+                        <option value="Cybersecurity">Cybersecurity</option>
+                        <option value="Project Management">Project Management</option>
+                        <option value="Design & UX">Design & UX</option>
+                    </select>
+                    <select id="jobTypeFilter">
+                        <option value="all">All Engagement Types</option>
+                        <option value="Contract">Contract</option>
+                        <option value="Contract-to-Hire">Contract-to-Hire</option>
+                        <option value="Direct Hire">Direct Hire</option>
+                    </select>
+                    <button type="button" id="search-jobs-btn" class="btn btn-primary">Search Jobs</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Listings -->
+    <section class="job-listings">
+        <div class="container">
+            <div class="section-title">
+                <h2>Open Positions</h2>
+                <p class="section-subtitle" id="jobResultsCount">Showing all open roles</p>
+            </div>
+
+            <div class="jobs-grid" id="jobsGrid">
+                <div class="job-card" data-title="Senior Full Stack Developer" data-location="Remote"
+                    data-category="Software Development" data-type="Contract">
+                    <div class="job-header">
+                        <h3>Senior Full Stack Developer</h3>
+                        <span class="job-type">Contract</span>
+                    </div>
+                    <div class="job-details">
+                        <span><i class="fas fa-map-marker-alt"></i> Remote</span>
+                        <span><i class="fas fa-briefcase"></i> 5+ years experience</span>
+                    </div>
+                    <p>Build and maintain enterprise web applications for a Fortune 500 financial services client
+                        using React, Node.js, and AWS.</p>
+                    <a href="contact.html" class="btn btn-secondary">Apply Now</a>
+                </div>
+
+                <div class="job-card" data-title="Data Engineer" data-location="Dallas, TX"
+                    data-category="Data & AI" data-type="Contract-to-Hire">
+                    <div class="job-header">
+                        <h3>Data Engineer</h3>
+                        <span class="job-type">Contract-to-Hire</span>
+                    </div>
+                    <div class="job-details">
+                        <span><i class="fas fa-map-marker-alt"></i> Hybrid / Dallas, TX</span>
+                        <span><i class="fas fa-briefcase"></i> 4+ years experience</span>
+                    </div>
+                    <p>Design and maintain data pipelines and warehousing solutions for a healthcare analytics
+                        client using Python, SQL, and Databricks.</p>
+                    <a href="contact.html" class="btn btn-secondary">Apply Now</a>
+                </div>
+
+                <div class="job-card" data-title="Cloud Solutions Architect" data-location="Remote"
+                    data-category="Cloud & Infrastructure" data-type="Direct Hire">
+                    <div class="job-header">
+                        <h3>Cloud Solutions Architect</h3>
+                        <span class="job-type">Direct Hire</span>
+                    </div>
+                    <div class="job-details">
+                        <span><i class="fas fa-map-marker-alt"></i> Remote</span>
+                        <span><i class="fas fa-briefcase"></i> 7+ years experience</span>
+                    </div>
+                    <p>Lead cloud migration and infrastructure strategy for a growing e-commerce platform on AWS
+                        and Azure.</p>
+                    <a href="contact.html" class="btn btn-secondary">Apply Now</a>
+                </div>
+
+                <div class="job-card" data-title="Cybersecurity Analyst" data-location="Frisco, TX"
+                    data-category="Cybersecurity" data-type="Contract">
+                    <div class="job-header">
+                        <h3>Cybersecurity Analyst</h3>
+                        <span class="job-type">Contract</span>
+                    </div>
+                    <div class="job-details">
+                        <span><i class="fas fa-map-marker-alt"></i> On-site / Frisco, TX</span>
+                        <span><i class="fas fa-briefcase"></i> 3+ years experience</span>
+                    </div>
+                    <p>Monitor, investigate, and respond to security incidents for a client in the insurance
+                        sector.</p>
+                    <a href="contact.html" class="btn btn-secondary">Apply Now</a>
+                </div>
+
+                <div class="job-card" data-title="Technical Project Manager" data-location="Remote / Hybrid"
+                    data-category="Project Management" data-type="Contract-to-Hire">
+                    <div class="job-header">
+                        <h3>Technical Project Manager</h3>
+                        <span class="job-type">Contract-to-Hire</span>
+                    </div>
+                    <div class="job-details">
+                        <span><i class="fas fa-map-marker-alt"></i> Remote / Hybrid</span>
+                        <span><i class="fas fa-briefcase"></i> 5+ years experience</span>
+                    </div>
+                    <p>Drive delivery of a multi-team software modernization program for a manufacturing client.</p>
+                    <a href="contact.html" class="btn btn-secondary">Apply Now</a>
+                </div>
+
+                <div class="job-card" data-title="UX/UI Designer" data-location="Remote"
+                    data-category="Design & UX" data-type="Contract">
+                    <div class="job-header">
+                        <h3>UX/UI Designer</h3>
+                        <span class="job-type">Contract</span>
+                    </div>
+                    <div class="job-details">
+                        <span><i class="fas fa-map-marker-alt"></i> Remote</span>
+                        <span><i class="fas fa-briefcase"></i> 3+ years experience</span>
+                    </div>
+                    <p>Design intuitive interfaces for a client-facing logistics tracking platform.</p>
+                    <a href="contact.html" class="btn btn-secondary">Apply Now</a>
+                </div>
+
+                <div class="job-card" data-title="DevOps Engineer" data-location="Remote"
+                    data-category="Cloud & Infrastructure" data-type="Direct Hire">
+                    <div class="job-header">
+                        <h3>DevOps Engineer</h3>
+                        <span class="job-type">Direct Hire</span>
+                    </div>
+                    <div class="job-details">
+                        <span><i class="fas fa-map-marker-alt"></i> Remote</span>
+                        <span><i class="fas fa-briefcase"></i> 4+ years experience</span>
+                    </div>
+                    <p>Own CI/CD pipelines and cloud infrastructure automation for a fast-growing retail
+                        technology client.</p>
+                    <a href="contact.html" class="btn btn-secondary">Apply Now</a>
+                </div>
+
+                <div class="job-card" data-title="Machine Learning Engineer" data-location="Remote"
+                    data-category="Data & AI" data-type="Contract">
+                    <div class="job-header">
+                        <h3>Machine Learning Engineer</h3>
+                        <span class="job-type">Contract</span>
+                    </div>
+                    <div class="job-details">
+                        <span><i class="fas fa-map-marker-alt"></i> Remote</span>
+                        <span><i class="fas fa-briefcase"></i> 4+ years experience</span>
+                    </div>
+                    <p>Develop and deploy predictive models for a client in the energy and utilities sector.</p>
+                    <a href="contact.html" class="btn btn-secondary">Apply Now</a>
+                </div>
+
+                <div class="job-card" data-title="QA Automation Engineer" data-location="Frisco, TX"
+                    data-category="Software Development" data-type="Contract-to-Hire">
+                    <div class="job-header">
+                        <h3>QA Automation Engineer</h3>
+                        <span class="job-type">Contract-to-Hire</span>
+                    </div>
+                    <div class="job-details">
+                        <span><i class="fas fa-map-marker-alt"></i> On-site / Frisco, TX</span>
+                        <span><i class="fas fa-briefcase"></i> 3+ years experience</span>
+                    </div>
+                    <p>Build automated test suites for a telecommunications client's customer portal.</p>
+                    <a href="contact.html" class="btn btn-secondary">Apply Now</a>
+                </div>
+            </div>
+
+            <p id="noResultsMessage" style="display:none; text-align:center; margin-top:2rem; color: var(--text-secondary);">
+                No openings match your search right now. <a href="contact.html">Contact us</a> and we'll reach out
+                when a fitting role opens up.
+            </p>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Don't See the Right Role?</h2>
+            <p>Send us your resume and we'll match you with opportunities as they open up</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary btn-large">Submit Your Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="index.html#staffing">Staffing Solutions</a></li>
+                        <li><a href="index.html#staffing">Contract Talent</a></li>
+                        <li><a href="index.html#staffing">Permanent Talent</a></li>
+                        <li><a href="services.html">Consulting Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Areas of Expertise</h3>
+                    <ul>
+                        <li><a href="index.html#staffing">Technology</a></li>
+                        <li><a href="services.html">Software Development</a></li>
+                        <li><a href="services.html">AI & Automation</a></li>
+                        <li><a href="services.html">Cloud & Infrastructure</a></li>
+                        <li><a href="services.html">Data & Analytics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="jobs.html">Find a Job</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="services.html">Service Portfolio</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Spark Tek Solutions</a></li>
+                        <li><a href="about.html">Our Values</a></li>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="contact.html">Locations</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="X (Twitter)">
+                        <svg style="width: 16px; height: 16px; fill: currentColor;" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+                <p>&copy; 2025 Spark Tek Solutions. All rights reserved. | <a href="#">Privacy Policy</a> | <a
+                        href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>

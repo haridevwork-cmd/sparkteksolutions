@@ -34,30 +34,68 @@ navLinks.forEach(link => {
 });
 
 // ==================== //
-// Job Search Functionality
+// Job Search & Filter Functionality
 // ==================== //
 const searchJobsBtn = document.getElementById('search-jobs-btn');
-if (searchJobsBtn) {
-    searchJobsBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const jobTitle = document.querySelector('.job-search-container input[placeholder*="Job Title"]').value;
-        const location = document.querySelector('.job-search-container input[placeholder*="City"]').value;
+const jobsGrid = document.getElementById('jobsGrid');
 
-        if (!jobTitle && !location) {
-            alert('Please enter a job title or location to search');
-            return;
+if (searchJobsBtn && jobsGrid) {
+    const jobKeywordInput = document.getElementById('jobKeywordInput');
+    const jobLocationInput = document.getElementById('jobLocationInput');
+    const jobCategoryFilter = document.getElementById('jobCategoryFilter');
+    const jobTypeFilter = document.getElementById('jobTypeFilter');
+    const jobResultsCount = document.getElementById('jobResultsCount');
+    const noResultsMessage = document.getElementById('noResultsMessage');
+    const jobCards = Array.from(jobsGrid.querySelectorAll('.job-card'));
+
+    const runJobSearch = () => {
+        const keyword = jobKeywordInput.value.trim().toLowerCase();
+        const location = jobLocationInput.value.trim().toLowerCase();
+        const category = jobCategoryFilter.value;
+        const type = jobTypeFilter.value;
+
+        let visibleCount = 0;
+
+        jobCards.forEach(card => {
+            const title = (card.dataset.title || '').toLowerCase();
+            const cardLocation = (card.dataset.location || '').toLowerCase();
+            const cardCategory = card.dataset.category || '';
+            const cardType = card.dataset.type || '';
+
+            const matchesKeyword = !keyword || title.includes(keyword) || card.textContent.toLowerCase().includes(keyword);
+            const matchesLocation = !location || cardLocation.includes(location);
+            const matchesCategory = category === 'all' || cardCategory === category;
+            const matchesType = type === 'all' || cardType === type;
+
+            const isMatch = matchesKeyword && matchesLocation && matchesCategory && matchesType;
+            card.style.display = isMatch ? '' : 'none';
+            if (isMatch) visibleCount++;
+        });
+
+        if (jobResultsCount) {
+            jobResultsCount.textContent = visibleCount === jobCards.length
+                ? 'Showing all open roles'
+                : `Showing ${visibleCount} of ${jobCards.length} open roles`;
         }
 
-        // Simulate search with loading state
-        const originalText = searchJobsBtn.textContent;
-        searchJobsBtn.textContent = 'Searching...';
-        searchJobsBtn.disabled = true;
+        if (noResultsMessage) {
+            noResultsMessage.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+    };
 
-        setTimeout(() => {
-            alert(`Searching for: ${jobTitle || 'All positions'} in ${location || 'All locations'}\n\nPlease contact us to discuss available opportunities!`);
-            searchJobsBtn.textContent = originalText;
-            searchJobsBtn.disabled = false;
-        }, 1000);
+    searchJobsBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        runJobSearch();
+    });
+
+    [jobKeywordInput, jobLocationInput].forEach(input => {
+        input.addEventListener('keyup', (e) => {
+            if (e.key === 'Enter') runJobSearch();
+        });
+    });
+
+    [jobCategoryFilter, jobTypeFilter].forEach(select => {
+        select.addEventListener('change', runJobSearch);
     });
 }
 
